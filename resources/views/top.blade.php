@@ -16,16 +16,13 @@
 
 		<h1 class="mt-8 text-2xl font-bold">スレッド</h1>
 
-		<div class="mt-4   grid grid-cols-3 gap-4">
+		<div class="mt-4   grid grid-cols-3 gap-6">
 
-			<div class="bg-white p-6 rounded-xl   flex flex-col gap-2">
-
-				<p class="font-bold">今年買って良かったもの</p>
-				<p>僕はパソコンです。</p>
-				<p class="text-neutral-500">13コメント</p>
-			</div>
+			<x-thread-card/>
+			<x-thread-card/>
+			<x-thread-card/>
+			<x-thread-card/>
 		</div>
-
 
 	</main>
 
