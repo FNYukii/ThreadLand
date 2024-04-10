@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="h-full">
 
 <head>
 	<meta charset="UTF-8">
@@ -8,7 +8,7 @@
 	@vite('resources/css/app.css')
 </head>
 
-<body class="bg-purple-200">
+<body class="bg-purple-200 h-full">
 
 	<x-header />
 
@@ -30,6 +30,8 @@
 		</div>
 
 	</main>
+
+	<x-footer />
 
 </body>
 
