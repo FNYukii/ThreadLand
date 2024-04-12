@@ -25,10 +25,11 @@
 
 		<div class="mt-4   grid grid-cols-3 gap-6">
 
-			<x-thread-card />
-			<x-thread-card />
-			<x-thread-card />
-			<x-thread-card />
+
+			@foreach($threads as $thread)
+			<x-thread-card :thread="$thread" />
+			@endforeach
+
 		</div>
 
 	</main>
