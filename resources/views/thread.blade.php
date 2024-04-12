@@ -20,7 +20,7 @@
 
 			<h1 class="text-2xl font-bold">みんな今日は何食べた?</h1>
 
-			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full   hover:bg-purple-300 transition">新しいコメント</label>
+			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
 		</div>
 
 		<div class="mt-4   bg-white rounded-xl p-8   flex flex-col gap-4">
