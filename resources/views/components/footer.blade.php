@@ -1,4 +1,4 @@
-<footer class="bg-white   pt-8 pb-4   sticky top-full">
+<footer class="mt-16   bg-white   pt-8 pb-4   sticky top-full">
 
 	<div class="mx-auto   w-full px-4 xl:w-[1200px] xl:px-0">
 
