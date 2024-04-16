@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>スレッド - Thread Land</title>
+	<title>{{ $thread->title }} - Thread Land</title>
 	@vite('resources/css/app.css')
 </head>
 
@@ -18,7 +18,7 @@
 
 		<div class="mt-8   flex justify-between items-center">
 
-			<h1 class="text-2xl font-bold">みんな今日は何食べた?</h1>
+			<h1 class="text-2xl font-bold">{{ $thread->title }}</h1>
 
 			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
 		</div>
