@@ -12,10 +12,9 @@
 
 	<x-header />
 
-
-
 	<main class="mx-auto   w-full px-4 xl:w-[1200px] xl:px-0">
 
+		<!-- Title Bar -->
 		<div class="mt-8   flex justify-between items-center">
 
 			<h1 class="text-2xl font-bold">{{ $thread->title }}</h1>
@@ -23,6 +22,8 @@
 			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
 		</div>
 
+
+		<!-- Comments Section -->
 		<div class="mt-4   bg-white rounded-xl p-8   flex flex-col gap-4">
 
 			@foreach($comments as $comment)
@@ -35,6 +36,14 @@
 				<p class="mt-1">{{ $comment->text }}</p>
 			</div>
 			@endforeach
+
+
+			
+			@if (count($comments) === 0)
+			<div class="py-8">
+				<p class="text-neutral-500 text-center">コメントはまだありません</p>
+			</div>
+			@endif
 		</div>
 
 	</main>
