@@ -25,10 +25,16 @@
 
 		<div class="mt-4   bg-white rounded-xl p-8   flex flex-col gap-4">
 
-			<x-comment-row />
-			<x-comment-row />
-			<x-comment-row />
-			<x-comment-row />
+			@foreach($comments as $comment)
+			<div>
+				<div class="flex gap-2">
+					<p class="font-bold">{{ $comment->user_name }}</p>
+					<p class="text-neutral-500">{{ $comment->created_at }}</p>
+				</div>
+
+				<p class="mt-1">{{ $comment->text }}</p>
+			</div>
+			@endforeach
 		</div>
 
 	</main>

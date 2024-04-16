@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Thread;
 
@@ -16,8 +17,12 @@ class ThreadPageController extends Controller
 		// idがthreadIdと一致するthreadを読み取る
 		$thread = Thread::where('id', $threadId)->firstOrFail();
 
-		// 変数threadを渡したViewを表示
+		// このスレッドのcommentsを読み取る
+		$comments = Comment::where('thread_id', $threadId)->get();
+
+		// 変数threadと変数commentsを渡したViewを表示
 		return view('thread-page')
-			->with('thread', $thread);
+			->with('thread', $thread)
+			->with('comments', $comments);
     }
 }

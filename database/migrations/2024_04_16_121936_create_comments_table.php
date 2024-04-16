@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+		Schema::create('comments', function (Blueprint $table) {
             $table->id();
-			$table->string('threadId');
-			$table->string('userName');
+			$table->string('thread_id');
+			$table->string('user_name');
 			$table->string('text');
             $table->timestamps();
         });
