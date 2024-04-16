@@ -67,8 +67,8 @@
 
 				<p class="text-xl font-bold">新しいコメント</p>
 
-				<input type="text" placeholder="ニックネーム" class="mt-4   w-full py-1   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
-				<input type="text" placeholder="コメント" class="mt-2   w-full py-1   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<input type="text" placeholder="ニックネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<input type="text" placeholder="コメント" class="mt-2   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
 
 				<div class="mt-4 flex justify-end">
 					<button class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   hover:bg-purple-200 transition">追加</button>
