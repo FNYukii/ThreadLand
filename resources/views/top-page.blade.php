@@ -16,6 +16,7 @@
 
 	<main class="mx-auto   w-full px-4 xl:w-[1200px] xl:px-0">
 
+		<!-- Title Bar -->
 		<div class="mt-8   flex justify-between items-center">
 
 			<h1 class="text-2xl font-bold">スレッド</h1>
@@ -23,6 +24,9 @@
 			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいスレッド</label>
 		</div>
 
+
+
+		<!-- Threads Section -->
 		<div class="mt-4   grid grid-cols-3 gap-6">
 
 			@foreach($threads as $thread)
@@ -33,8 +37,11 @@
 				<p class="text-neutral-500">xxコメント</p>
 			</a>
 			@endforeach
-
 		</div>
+
+		@if (count($threads) === 0)
+		<p class="text-neutral-500 text-center">スレッドはまだありません</p>
+		@endif
 
 	</main>
 
