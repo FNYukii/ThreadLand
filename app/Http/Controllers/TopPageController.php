@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Thread;
 
-class TopController extends Controller
+class TopPageController extends Controller
 {
 	public function __invoke(Request $request)
 	{
@@ -14,7 +14,7 @@ class TopController extends Controller
 		$threads = Thread::orderBy('created_at', 'DESC')->get();
 
 		// 変数threadsを渡したViewを表示
-		return view('top')
+		return view('top-page')
 			->with('threads', $threads);
 	}
 }

@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\CreateThreadController;
-use App\Http\Controllers\TopController;
+use App\Http\Controllers\TopPageController;
 use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', TopController::class);
+Route::get('/', TopPageController::class);
 
 Route::post('/create', CreateThreadController::class);
 
 Route::get('/threads/{threadId}', function () {
-	return view('thread');
+	return view('thread-page');
 });
