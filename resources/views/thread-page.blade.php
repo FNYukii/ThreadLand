@@ -38,7 +38,7 @@
 			@endforeach
 
 
-			
+
 			@if (count($comments) === 0)
 			<div class="py-8">
 				<p class="text-neutral-500 text-center">コメントはまだありません</p>
@@ -57,7 +57,9 @@
 	<!-- コメント追加モーダル -->
 	<input id="open-modal" type="checkbox" class="peer hidden">
 
-	<div class="hidden peer-checked:block">
+	<form action="/threads/new" method="post" class="hidden peer-checked:block">
+
+		@csrf
 
 		<div class="fixed top-0 left-0 w-screen h-screen   flex justify-center items-center">
 
@@ -67,15 +69,16 @@
 
 				<p class="text-xl font-bold">新しいコメント</p>
 
-				<input type="text" placeholder="ニックネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
-				<input type="text" placeholder="コメント" class="mt-2   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<input type="text" name="threadId" value=" {{ $thread->id }}" hidden>
+				<input type="text" name="userName" placeholder="ユーザーネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<input type="text" name="text" placeholder="コメント" class="mt-2   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
 
 				<div class="mt-4 flex justify-end">
-					<button class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   hover:bg-purple-200 transition">追加</button>
+					<button type="submit" class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   hover:bg-purple-200 transition">追加</button>
 				</div>
 			</div>
 		</div>
-	</div>
+	</form>
 
 
 
