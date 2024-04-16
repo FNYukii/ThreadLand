@@ -47,7 +47,7 @@
 	<!-- スレッド追加モーダル -->
 	<input id="open-modal" type="checkbox" class="peer hidden">
 
-	<form action="/create" method="post" class="hidden peer-checked:block">
+	<form action="/new" method="post" class="hidden peer-checked:block">
 
 		@csrf
 

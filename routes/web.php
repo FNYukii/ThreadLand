@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', TopPageController::class);
-Route::post('/create', CreateThreadController::class);
+Route::post('/new', CreateThreadController::class);
 
 Route::get('/threads/{threadId}', ThreadPageController::class);
