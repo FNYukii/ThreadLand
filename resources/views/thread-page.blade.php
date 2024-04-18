@@ -71,7 +71,7 @@
 
 				<input type="text" name="threadId" value=" {{ $thread->id }}" hidden>
 				<input type="text" name="userName" placeholder="ユーザーネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
-				<input type="text" name="text" placeholder="コメント" class="mt-2   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<textarea name="text" placeholder="コメント" rows="3" class="mt-2   w-full py-2   border-b border-neutral-300   resize-none   focus:outline-none focus:border-purple-500"></textarea>
 
 				<div class="mt-4 flex justify-end">
 					<button type="submit" class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   hover:bg-purple-200 transition">追加</button>
