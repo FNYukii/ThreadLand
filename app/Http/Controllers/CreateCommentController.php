@@ -19,6 +19,8 @@ class CreateCommentController extends Controller
 
 		// データベースに保存
 		$comment->save();
+
+		// スレッドページに戻る
 		return redirect("/threads/{$request->threadId()}");
     }
 }

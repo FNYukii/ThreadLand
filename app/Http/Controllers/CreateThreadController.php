@@ -16,6 +16,8 @@ class CreateThreadController extends Controller
 
 		// データベースに保存
 		$thread->save();
+
+		// トップページに戻る
 		return redirect('/');
     }
 }
