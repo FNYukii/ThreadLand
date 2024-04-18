@@ -19,7 +19,7 @@
 
 			<h1 class="text-2xl font-bold">{{ $thread->title }}</h1>
 
-			<label for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
+			<label tabindex="0" for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
 		</div>
 
 
