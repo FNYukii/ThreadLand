@@ -33,7 +33,11 @@
 			<a href="/threads/{{ $thread->id }}" class="block rounded-xl bg-white p-6    flex flex-col gap-2   hover:bg-neutral-100 hover:scale-95 transition">
 
 				<p class="font-bold">{{ $thread->title }}</p>
+				
+				@if ($thread->firstCommentText !== "")
 				<p>{{ $thread->firstCommentText }}</p>
+				@endif
+
 				<p class="text-neutral-500">{{ $thread->commentCount }} コメント</p>
 			</a>
 			@endforeach
@@ -54,7 +58,7 @@
 	<!-- スレッド追加モーダル -->
 	<input id="open-modal" type="checkbox" class="peer hidden">
 
-	<form action="/new" method="post" onsubmit="return false;" class="hidden peer-checked:block">
+	<form action="/new" method="post" class="hidden peer-checked:block">
 
 		@csrf
 

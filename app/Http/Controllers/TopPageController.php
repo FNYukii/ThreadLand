@@ -23,7 +23,7 @@ class TopPageController extends Controller
 
 			// 最初のコメントのtext
 			$firstComment = Comment::where('thread_id', $thread->id)->orderBy('created_at', 'ASC')->first();
-			$firstCommentText = $firstComment->text;
+			$firstCommentText = $firstComment->text ?? "";
 
 			// コメント数
 			$commentCount = Comment::where('thread_id', $thread->id)->count();
