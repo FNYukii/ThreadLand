@@ -19,7 +19,7 @@
 
 			<h1 class="text-2xl font-bold">{{ $thread->title }}</h1>
 
-			<label tabindex="0" for="open-modal" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</label>
+			<button id="open-modal-button" class="text-purple-500   -my-1 -mx-4   py-1 px-4 rounded-full cursor-pointer   hover:bg-purple-300 transition">新しいコメント</button>
 		</div>
 
 
@@ -55,31 +55,72 @@
 
 
 	<!-- コメント追加モーダル -->
-	<input id="open-modal" type="checkbox" class="peer hidden">
-
-	<form action="/threads/new" method="post" class="hidden peer-checked:block">
+	<form id="modal" action="/threads/new" method="post" class="hidden">
 
 		@csrf
 
 		<div class="fixed top-0 left-0 w-screen h-screen   flex justify-center items-center">
 
-			<label for="open-modal" class="w-screen h-screen bg-black/30"></label>
+			<button id="close-modal-button" type="button" class="w-screen h-screen bg-black/30"></button>
 
 			<div class="absolute    w-[400px]  bg-white p-8 rounded-xl">
 
 				<p class="text-xl font-bold">新しいコメント</p>
 
 				<input type="text" name="threadId" value=" {{ $thread->id }}" hidden>
-				<input type="text" name="userName" placeholder="ユーザーネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
-				<textarea name="text" placeholder="コメント" rows="3" class="mt-2   w-full py-2   border-b border-neutral-300   resize-none   focus:outline-none focus:border-purple-500"></textarea>
+
+				<input id="user-name-input" type="text" name="userName" placeholder="ユーザーネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<textarea id="text-input" name="text" placeholder="コメント" rows="3" class="mt-2   w-full py-2   border-b border-neutral-300   resize-none   focus:outline-none focus:border-purple-500"></textarea>
 
 				<div class="mt-4 flex justify-end">
-					<button type="submit" class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   hover:bg-purple-200 transition">追加</button>
+					<button id="submit-button" type="submit" disabled class="text-purple-500   -my-1 -mx-4 py-1 px-4 rounded-full font-bold   disabled:text-neutral-400   enabled:hover:bg-purple-200 transition">追加</button>
 				</div>
 			</div>
 		</div>
 	</form>
 
+
+
+	<script>
+		
+		// モーダルを開く
+		document.getElementById('open-modal-button').addEventListener("click", () => {
+
+			document.getElementById('modal').className = "block"
+			document.getElementById('user-name-input').focus()
+		})
+
+		// モーダルを閉じる
+		document.getElementById('close-modal-button').addEventListener("click", () => {
+
+			document.getElementById('modal').className = "hidden"
+		})
+
+
+
+		// 入力値チェック
+		const userNameInput = document.getElementById('user-name-input')
+		const textInput = document.getElementById('text-input')
+		const submitButton = document.getElementById('submit-button')
+
+		function onInput() {
+
+			const userName = userNameInput.value
+			const text = textInput.value
+
+			if (userName !== "" && userName.length <= 100 && text !== "" && text.length <= 300) {
+
+				submitButton.disabled = false
+				return
+			}
+
+			submitButton.disabled = true
+		}
+
+		userNameInput.addEventListener("input", onInput)
+		textInput.addEventListener("input", onInput)
+
+	</script>
 
 
 </body>
