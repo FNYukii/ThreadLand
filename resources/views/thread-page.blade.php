@@ -69,7 +69,7 @@
 
 				<input type="text" name="threadId" value=" {{ $thread->id }}" hidden>
 
-				<input id="user-name-input" type="text" name="userName" placeholder="ユーザーネーム" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
+				<input id="user-name-input" type="text" name="userName" placeholder="ユーザーネーム" autocomplete="off" class="mt-4   w-full py-2   border-b border-neutral-300   focus:outline-none focus:border-purple-500">
 				<textarea id="text-input" name="text" placeholder="コメント" rows="3" class="mt-2   w-full py-2   border-b border-neutral-300   resize-none   focus:outline-none focus:border-purple-500"></textarea>
 
 				<div class="mt-4 flex justify-end">
