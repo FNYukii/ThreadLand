@@ -61,7 +61,7 @@
 
 		<div class="fixed top-0 left-0 w-screen h-screen   flex justify-center items-center">
 
-			<button id="close-modal-button" type="button" class="w-screen h-screen bg-black/30"></button>
+			<button id="close-modal-button" type="button" class="w-screen h-screen bg-black/30   cursor-default"></button>
 
 			<div class="absolute    w-[400px]  bg-white p-8 rounded-xl">
 
