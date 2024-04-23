@@ -82,12 +82,26 @@
 
 
 	<script>
-		
+
+		// なんどか操作する要素
+		const userNameInput = document.getElementById('user-name-input')
+		const textInput = document.getElementById('text-input')
+		const submitButton = document.getElementById('submit-button')
+
+
+
 		// モーダルを開く
 		document.getElementById('open-modal-button').addEventListener("click", () => {
 
 			document.getElementById('modal').className = "block"
-			document.getElementById('user-name-input').focus()
+
+			// userNameが保存されていれば、textInputにフォーカスを当てる
+			const prevUserName = localStorage.getItem("userName")
+			if (!prevUserName) {
+				userNameInput.focus()
+			} else {
+				textInput.focus()
+			}
 		})
 
 		// モーダルを閉じる
@@ -99,10 +113,6 @@
 
 
 		// 入力値チェック
-		const userNameInput = document.getElementById('user-name-input')
-		const textInput = document.getElementById('text-input')
-		const submitButton = document.getElementById('submit-button')
-
 		function onInput() {
 
 			const userName = userNameInput.value
@@ -120,6 +130,20 @@
 		userNameInput.addEventListener("input", onInput)
 		textInput.addEventListener("input", onInput)
 
+
+
+		// userNameを自動補完
+		const prevUserName = localStorage.getItem("userName")
+		userNameInput.value = prevUserName
+
+
+
+		// 送信ボタンを押したらuserNameを保存
+		submitButton.addEventListener("click", () => {
+
+			const userName = userNameInput.value
+			localStorage.setItem("userName", userName)
+		})
 	</script>
 
 
