@@ -14,12 +14,14 @@ Laravelで作った簡単な掲示板アプリです。
 1. Homebrewをインストール
 	```
 	$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+	```
+	ターミナルを閉じて再度開く
+	```
 	$ brew -v
 	Homebrew 4.2.16
 	```
 
-2. PHPをインストール
+2. PHPをインストール(結構時間がかかる)
 	```
 	$ brew install php
 
@@ -85,21 +87,43 @@ Laravelで作った簡単な掲示板アプリです。
 	```
 
 ### Laravelプロジェクト側の設定
-1. `.env`ファイルにデータベースの接続情報を記述
+1. `.env.example`を参考にして、`.env`ファイルを作成する
 	```
+	...
 	DB_CONNECTION=mysql
 	DB_HOST=127.0.0.1
 	DB_PORT=3306
-	DB_DATABASE=thread_land #DB名にする
+	DB_DATABASE=thread_land #データベース名にする
 	DB_USERNAME=root
 	DB_PASSWORD=secret   #設定したパスワードにする
+	...
 	```
 
-2. プロジェクト上でコマンドを実行して、データベースに必要なテーブルを追加
+2. プロジェクトに必要なパッケージをインストール
+	```
+	$ composer install
+	$ npm i
+	```
+
+3. sessionsテーブルを追加
+	```
+	$ php artisan session:table
+	```
+
+4. migrateコマンドを実行して、データベースに必要なテーブルを追加
 	```
 	$ php artisan migrate
 	```
 
+5. App Keyを作成
+	```
+	$ php artisan key:generate
+	```
+
+6. Viteのビルドファイルを生成
+	```
+	$ npm run dev
+	```
 
 ## 実行
 1. データベースを起動
