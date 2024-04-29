@@ -1,12 +1,19 @@
 # Thread Land
 
 ## 概要
-Laravelで作った簡単な掲示板アプリです。
+Laravelで作った簡単な掲示板アプリです。あんまり触れてこなかったLaravelを触ってみたくて作りました。
 
 ## 使用技術
 - PHP
 - Laravel
 - MySQL
+
+## スクリーンショット
+<img width="1440" alt="スクリーンショット 2024-04-29 20 48 41" src="https://github.com/FNYukii/ThreadLand/assets/65577595/3900d848-44f1-460c-b67b-fcd06b7877a1">
+<img width="1440" alt="スクリーンショット 2024-04-29 20 49 01" src="https://github.com/FNYukii/ThreadLand/assets/65577595/b4f17941-d99b-4e30-9ef1-d168d3da8782">
+
+<img width="1440" alt="スクリーンショット 2024-04-29 20 49 08" src="https://github.com/FNYukii/ThreadLand/assets/65577595/283eb2c1-66a7-4e18-96d2-9120b59bcfc7">
+<img width="1440" alt="スクリーンショット 2024-04-29 20 49 20" src="https://github.com/FNYukii/ThreadLand/assets/65577595/919de2ad-8daa-4e42-8349-2e973e4f3654">
 
 ## 環境構築
 ### 各種パッケージの導入
