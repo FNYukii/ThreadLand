@@ -1,12 +1,14 @@
 # Thread Land
 
 ## 概要
-Laravelで作った簡単な掲示板アプリです。あんまり触れてこなかったLaravelを触ってみたくて作りました。
+Laravelで作った簡単な掲示板アプリです。あまり開発経験が無いLaravelを触ってみたくて作りました。
 
 ## 使用技術
 - PHP
 - Laravel
 - MySQL
+- Tailwind CSS
+- JavaScript (モーダル開閉時の処理等に利用)
 
 ## スクリーンショット
 <img width="1440" alt="スクリーンショット 2024-04-29 20 48 41" src="https://github.com/FNYukii/ThreadLand/assets/65577595/3900d848-44f1-460c-b67b-fcd06b7877a1">
@@ -16,6 +18,9 @@ Laravelで作った簡単な掲示板アプリです。あんまり触れてこ�
 <img width="1440" alt="スクリーンショット 2024-04-29 20 49 20" src="https://github.com/FNYukii/ThreadLand/assets/65577595/919de2ad-8daa-4e42-8349-2e973e4f3654">
 
 ## 環境構築
+
+Laravel初学者なので、今回はDocker等は使わず最も基礎的な方法で環境構築を行いました。Dockerを使ったスマートな環境構築手順も今後勉強してみたいです。
+
 ### 各種パッケージの導入
 ※以下はMacOSにおける手順
 1. Homebrewをインストール
